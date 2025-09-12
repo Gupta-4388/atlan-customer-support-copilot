@@ -113,5 +113,3 @@ with tab2:
                 st.write(f"- {src}")
         else:
             st.info(f"This ticket has been classified as a **{topic}** issue and routed to the appropriate team.")
-opic}** issue and routed to the appropriate team.")
-
