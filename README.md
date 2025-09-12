@@ -25,53 +25,66 @@ The implementation demonstrates:
 
 1. Copy `.env.example` to `.env` and fill in `OPENAI_API_KEY` if available.  
 2. Create and activate a virtual environment, then install requirements:
-   ```powershell
-   python -m venv venv
-   venv\Scripts\activate
-   pip install -r requirements.txt
+
+```powershell
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+````
+
 3. Confirm tickets load:
 
-   ```powershell
-   python ingest.py --list
-   ```
+```powershell
+python ingest.py --list
+```
+
 4. *(Optional)* Fetch documentation to `data/docs`:
 
-   ```powershell
-   python ingest.py --fetch <urls>
-   ```
+```powershell
+python ingest.py --fetch <urls>
+```
+
 5. Launch the Streamlit app:
 
-   ```powershell
-   streamlit run app.py
-   ```
+```powershell
+streamlit run app.py
+```
 
 ---
 
 ## 📂 Project Structure
 
 ```
-.
-├── app.py                  # Streamlit app (UI)
-├── ingest.py               # Handles ticket/doc ingestion
-├── chroma_db/              # Local Chroma DB persistence
-├── data/                   # Tickets and docs folder
-│   └── sample_tickets.jsonl
-├── requirements.txt        # Dependencies
-├── README.md               # Project documentation
-└── submission.md           # Submission summary
+atlan-customer-support-copilot/
+├── app.py                   # Streamlit app (UI)
+├── ingest.py                # Handles ticket/doc ingestion
+├── classify.py              # Ticket classification logic (topic, sentiment, priority)
+├── rag.py                   # RAG helper: answer_query using Chroma + GPT
+├── data/
+│   ├── chroma_db/           # Local Chroma DB persistence
+│   ├── sample_tickets.jsonl # Example support tickets
+│   └── docs/                # Optional SDK/docs files for RAG
+├─ tests/
+│ ├─ test_ingest.py          # Test ingestion works (mock URLs)
+│ ├─ test_classify.py        # Test classification logic
+├─ .gitignore                # Ignore sensitive/auto-generated files
+├── render.yaml              # Render deployment config
+├── requirements.txt         # Dependencies
+├── README.md                # Project documentation
+└── submission.md            # Submission summary
 ```
 
 ---
 
 ## 🛠️ Design Decisions
 
-1. **Fallback Heuristics :** 
+1. **Fallback Heuristics**
    Even without an OpenAI API key, the app still classifies tickets using rule-based heuristics.
 
-2. **Local Persistence :** 
+2. **Local Persistence**
    Chroma DB persistence ensures embeddings don’t need to be regenerated every run.
 
-3. **Lightweight & Minimal :** 
+3. **Lightweight & Minimal**
    No heavy dependencies are used outside of `requirements.txt`, making the app easy to run locally.
 
 ---
@@ -86,11 +99,11 @@ The implementation demonstrates:
 
 ## ✅ Task Completion Status
 
-* [✅] Added bulk ticket classification
-* [✅] Integrated RAG-backed assistant with Chroma DB
-* [✅] Built Streamlit UI for interaction
-* [✅] Documented repo with clear setup instructions
-* [ ] Future extension: Enhance UI, add advanced classification models
+* ✅ **Bulk Ticket Classification** – Successfully implemented ticket classification for multiple tickets with topic, sentiment, priority, and confidence scores.
+* ✅ **RAG-backed Assistant Integration** – Implemented a retrieval-augmented generation pipeline using Chroma DB for local persistence, capable of answering tickets/questions based on ingested documentation.
+* ✅ **Streamlit UI Development** – Built an intuitive web interface with separate tabs for bulk ticket dashboard and interactive ticket assistant.
+* ✅ **Comprehensive Documentation** – Provided clear setup instructions, project structure, and usage guidelines in `README.md` and `submission.md`.
+* [ ] **Future Enhancements** – Potential improvements include refining the UI/UX, integrating advanced classification models, expanding SDK documentation for more accurate RAG responses, and adding automated testing for pipeline validation.
 
 ---
 
