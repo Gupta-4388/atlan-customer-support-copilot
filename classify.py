@@ -1,4 +1,18 @@
-# classify.py
+"""
+classify.py — Ticket Classification Logic for Customer Support Copilot
+
+This module provides functions to classify a customer support ticket or question
+into:
+1. Topic (e.g., How-to, Product, API/SDK)
+2. Sentiment (e.g., Frustrated, Curious, Angry, Neutral)
+3. Priority (P0, P1, P2)
+4. Confidence score (0-1)
+
+Classification works in two modes:
+- OpenAI GPT-based classification (if OPENAI_API_KEY is provided)
+- Heuristic fallback classification (rule-based) otherwise
+"""
+
 import os
 import json
 import random
