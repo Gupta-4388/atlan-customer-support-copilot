@@ -1,4 +1,12 @@
-# app.py
+"""
+app.py — Streamlit UI for Customer Support Copilot
+
+This file provides the web interface for the Customer Support Copilot application:
+1. Bulk Ticket Dashboard — displays multiple tickets with AI-generated classifications.
+2. Interactive Agent — allows users to submit a ticket/question and get:
+   - Internal analysis (topic, sentiment, priority)
+   - Final response using RAG (if applicable)
+"""
 
 import json
 import streamlit as st
