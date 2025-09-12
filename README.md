@@ -12,10 +12,13 @@ The implementation demonstrates:
 
 ---
 
-## 🚀 Live Demo
-Try the working **Customer Support Copilot** application here:  
+## 🚀 Project Links & Live Demo
 
-[Customer Support Copilot Live](https://atlan-customer-support-copilot.onrender.com)
+- **Live Application:** [Customer Support Copilot](https://atlan-customer-support-copilot.onrender.com)  
+  Try the working helpdesk application directly in your browser.
+
+- **GitHub Repository:** [Repo Link](https://github.com/Gupta-4388/atlan-customer-support-copilot)  
+  Contains all source code, project files, and documentation.
 
 ---
 
@@ -119,6 +122,7 @@ atlan-customer-support-copilot/
 
 This project is for **internship evaluation purposes only** under Atlan’s AI Engineer program.
 If reusing this work, please ensure proper attribution and follow open-source license guidelines.
+
 
 
 
