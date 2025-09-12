@@ -90,13 +90,13 @@ atlan-customer-support-copilot/
 
 ## 🛠️ Design Decisions
 
-1. **Fallback Heuristics**
+1. **Fallback Heuristics:**
    Even without an OpenAI API key, the app still classifies tickets using rule-based heuristics.
 
-2. **Local Persistence**
+2. **Local Persistence:**
    Chroma DB persistence ensures embeddings don’t need to be regenerated every run.
 
-3. **Lightweight & Minimal**
+3. **Lightweight & Minimal:**
    No heavy dependencies are used outside of `requirements.txt`, making the app easy to run locally.
 
 ---
@@ -123,6 +123,7 @@ atlan-customer-support-copilot/
 
 This project is for **internship evaluation purposes only** under Atlan’s AI Engineer program.
 If reusing this work, please ensure proper attribution and follow open-source license guidelines.
+
 
 
 
