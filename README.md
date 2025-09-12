@@ -63,7 +63,7 @@ atlan-customer-support-copilot/
 ├── data/
 │   ├── chroma_db/            # Local Chroma DB persistence
 │   ├── sample_tickets.jsonl  # Example support tickets
-│   └── docs/                 # Optional SDK/docs files for RAG
+│   ├── docs/                 # Optional SDK/docs files for RAG
 ├── tests/
 │   ├── test_ingest.py        # Test ingestion works (mock URLs)
 │   ├── test_classify.py      # Test classification logic
@@ -71,7 +71,7 @@ atlan-customer-support-copilot/
 ├── render.yaml               # Render deployment config
 ├── requirements.txt          # Dependencies
 ├── README.md                 # Project documentation
-└── submission.md             # Submission summary
+├── submission.md             # Submission summary
 ```
 
 ---
@@ -111,4 +111,5 @@ atlan-customer-support-copilot/
 
 This project is for **internship evaluation purposes only** under Atlan’s AI Engineer program.
 If reusing this work, please ensure proper attribution and follow open-source license guidelines.
+
 
