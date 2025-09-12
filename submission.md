@@ -3,7 +3,7 @@
 
 ---
 
-## What I submitted
+## ✅ What I submitted
 - **Streamlit app:** `app.py` (bulk dashboard + interactive assistant)  
 - **Ingest helper:** `ingest.py` (loads tickets + fetches docs from curated URLs)  
 - **Classification helper:** `classify.py` (topic, sentiment, priority, confidence)  
@@ -20,7 +20,7 @@
 
 ## Project Links
 
-- **Live Application:** https://atlan-customer-support-copilot.onrender.com
+- **🚀 Live Application:** https://atlan-customer-support-copilot.onrender.com
 - **GitHub Repository:** https://github.com/Gupta-4388/atlan-customer-support-copilot
 
 ---
@@ -91,4 +91,5 @@ atlan-customer-support-copilot/
 ├── README.md                # Project documentation
 └── submission.md            # Submission summary
 ```
+
 
