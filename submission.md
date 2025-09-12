@@ -18,6 +18,13 @@
 
 ---
 
+## Project Links
+
+- **Live Application:** https://atlan-customer-support-copilot.onrender.com
+- **GitHub Repository:** https://github.com/Gupta-4388/atlan-customer-support-copilot
+
+---
+
 ## How to run
 - See [README.md](https://github.com/Gupta-4388/atlan-customer-support-copilot/blob/main/README.md) for detailed setup instructions.  
 - Basic demo steps:
@@ -84,3 +91,4 @@ atlan-customer-support-copilot/
 ├── README.md                # Project documentation
 └── submission.md            # Submission summary
 ```
+
