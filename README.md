@@ -88,6 +88,14 @@ atlan-customer-support-copilot/
 
 ---
 
+## 🏗️ System Architecture  
+
+The following diagram illustrates the complete architecture of the **Customer Support Copilot AI System**, highlighting the flow from user interaction to AI-driven insights.  
+
+![🧩 Architecture Overview](architecture.jpg)  
+
+---
+
 ## 🛠️ Design Decisions
 
 1. **Fallback Heuristics:**
@@ -123,6 +131,7 @@ atlan-customer-support-copilot/
 
 This project is for **internship evaluation purposes only** under Atlan’s AI Engineer program.
 If reusing this work, please ensure proper attribution and follow open-source license guidelines.
+
 
 
 
