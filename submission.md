@@ -14,6 +14,8 @@ Author: Boddu Lakshmi Narayana Gupta (AI Engineer Intern)
 ---
 
 ## How to run
+- See [README.md](https://github.com/Gupta-4388/atlan-customer-support-copilot/blob/main/README.md) for detailed setup instructions.
+- Basic demo steps:
 1. Ensure **Python 3.11+** is installed.  
 2. Create a virtual environment and install dependencies:
 
@@ -51,3 +53,4 @@ streamlit run app.py
 * **Future improvement:** Tweak classifier heuristics or integrate OpenAI API for better ticket classification.
 * **RAG answer note:** Currently, answers are illustrative if relevant SDK docs are not present in `data/docs/`.
 * **Chroma DB path:** The app uses `./data/chroma_db/` for local persistence. Ensure this folder exists and is writable.
+
