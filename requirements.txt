@@ -1,0 +1,11 @@
+streamlit
+openai
+chromadb
+duckdb
+requests
+beautifulsoup4
+pytest
+python-dotenv
+tqdm
+urllib3
+python-dotenv

@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+.env.*    # ignore any other env variants
+
+# Virtual environments
+venv/
+env/
+*.venv/
+
+# Byte-compiled / caches
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Chroma / local DB
+data/chroma_db/
+data/chroma/        # if you changed the path
+
+# Test / temporary files
+*.tmp
+*.bak
+
+# Streamlit / logs
+.streamlit/
+
+# Optional: Jupyter Notebook checkpoints
+.ipynb_checkpoints/
