@@ -25,11 +25,19 @@
 
 ---
 
+## 🏗️ System Architecture
+
+The diagram below presents the end-to-end architecture of the Customer Support Copilot AI system. It shows how user interactions flow through the system, from ticket submission to AI-powered classification, retrieval, and assistance:
+
+![🧩 Architecture Overview](architecture.jpg)  
+
 ## How to run
 - See [README.md](https://github.com/Gupta-4388/atlan-customer-support-copilot/blob/main/README.md) for detailed setup instructions.  
+
 - Basic demo steps:
 
 1. Ensure **Python 3.11+** is installed.  
+
 2. Create a virtual environment and install dependencies:
 
 ```powershell
@@ -69,7 +77,7 @@ streamlit run app.py
 
 ---
 
-## Project Structure (Summary)
+## 📂 Project Structure (Summary)
 
 ```
 atlan-customer-support-copilot/
@@ -91,5 +99,6 @@ atlan-customer-support-copilot/
 ├── README.md                # Project documentation
 └── submission.md            # Submission summary
 ```
+
 
 
