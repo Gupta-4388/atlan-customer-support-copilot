@@ -67,8 +67,21 @@ with tab2:
     st.header("💬 Interactive Ticket / Question")
     col1, col2 = st.columns([2,1])
 
+    # --- Inject CSS to disable resizing ---
+    st.markdown(
+        """
+        <style>
+        textarea {resize: none !important;}  /* disable resizing */
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
     with col1:
-        user_text = st.text_area("Paste a ticket or question here:", height=220)
+        user_text = st.text_area(
+            "Paste a ticket or question here:",
+            height=220  # fixed height
+        )
         if st.button("Analyze & Respond"):
             if not user_text.strip():
                 st.warning("Write a ticket first.")
@@ -100,4 +113,5 @@ with tab2:
                 st.write(f"- {src}")
         else:
             st.info(f"This ticket has been classified as a **{topic}** issue and routed to the appropriate team.")
+opic}** issue and routed to the appropriate team.")
 
