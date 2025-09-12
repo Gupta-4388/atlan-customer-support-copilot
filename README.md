@@ -12,6 +12,13 @@ The implementation demonstrates:
 
 ---
 
+## 🚀 Live Demo
+Try the working **Customer Support Copilot** application here:  
+
+[Customer Support Copilot Live](https://atlan-customer-support-copilot.onrender.com)
+
+---
+
 ## ⚙️ Features
 - **Bulk Ticket Classification**: Classifies multiple tickets at once, with fallback heuristics if no OpenAI key is provided.  
 - **RAG-backed Assistant**: Uses a retrieval-augmented generation flow to answer queries from ingested docs.  
