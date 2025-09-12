@@ -56,22 +56,22 @@ streamlit run app.py
 
 ```
 atlan-customer-support-copilot/
-├── app.py                   # Streamlit app (UI)
-├── ingest.py                # Handles ticket/doc ingestion
-├── classify.py              # Ticket classification logic (topic, sentiment, priority)
-├── rag.py                   # RAG helper: answer_query using Chroma + GPT
+├── app.py                    # Streamlit app (UI)
+├── ingest.py                 # Handles ticket/doc ingestion
+├── classify.py               # Ticket classification logic (topic, sentiment, priority)
+├── rag.py                    # RAG helper: answer_query using Chroma + GPT
 ├── data/
-│   ├── chroma_db/           # Local Chroma DB persistence
-│   ├── sample_tickets.jsonl # Example support tickets
-│   └── docs/                # Optional SDK/docs files for RAG
-├─ tests/
-│ ├─ test_ingest.py          # Test ingestion works (mock URLs)
-│ ├─ test_classify.py        # Test classification logic
-├─ .gitignore                # Ignore sensitive/auto-generated files
-├── render.yaml              # Render deployment config
-├── requirements.txt         # Dependencies
-├── README.md                # Project documentation
-└── submission.md            # Submission summary
+│   ├── chroma_db/            # Local Chroma DB persistence
+│   ├── sample_tickets.jsonl  # Example support tickets
+│   └── docs/                 # Optional SDK/docs files for RAG
+├── tests/
+│   ├── test_ingest.py        # Test ingestion works (mock URLs)
+│   ├── test_classify.py      # Test classification logic
+├── .gitignore                # Ignore sensitive/auto-generated files
+├── render.yaml               # Render deployment config
+├── requirements.txt          # Dependencies
+├── README.md                 # Project documentation
+└── submission.md             # Submission summary
 ```
 
 ---
@@ -111,3 +111,4 @@ atlan-customer-support-copilot/
 
 This project is for **internship evaluation purposes only** under Atlan’s AI Engineer program.
 If reusing this work, please ensure proper attribution and follow open-source license guidelines.
+
