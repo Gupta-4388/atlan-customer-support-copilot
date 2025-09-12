@@ -34,6 +34,7 @@ The implementation demonstrates:
 ## 🚀 Quick Start (Windows PowerShell)
 
 1. Copy `.env.example` to `.env` and fill in `OPENAI_API_KEY` if available.  
+
 2. Create and activate a virtual environment, then install requirements:
 
 ```powershell
@@ -122,6 +123,7 @@ atlan-customer-support-copilot/
 
 This project is for **internship evaluation purposes only** under Atlan’s AI Engineer program.
 If reusing this work, please ensure proper attribution and follow open-source license guidelines.
+
 
 
 
