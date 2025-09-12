@@ -56,6 +56,7 @@ streamlit run app.py
 
 ```
 atlan-customer-support-copilot/
+
 ├── app.py                    # Streamlit app (UI)
 ├── ingest.py                 # Handles ticket/doc ingestion
 ├── classify.py               # Ticket classification logic (topic, sentiment, priority)
@@ -111,5 +112,6 @@ atlan-customer-support-copilot/
 
 This project is for **internship evaluation purposes only** under Atlan’s AI Engineer program.
 If reusing this work, please ensure proper attribution and follow open-source license guidelines.
+
 
 
