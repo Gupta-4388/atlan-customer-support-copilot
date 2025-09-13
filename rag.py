@@ -1,13 +1,12 @@
 """
 rag.py
-- RAG helper: answer_query using ChromaDB + OpenAI
+- RAG helper: answer_query using ChromaDB + OpenAI (optional)
 """
 
 import os
 from typing import Dict
 import chromadb
 from chromadb.utils import embedding_functions
-from openai import OpenAI
 from dotenv import load_dotenv
 from ingest import run_ingestion
 
@@ -16,15 +15,18 @@ from ingest import run_ingestion
 # -------------------------------
 load_dotenv()
 OPENAI_KEY = os.getenv("OPENAI_API_KEY", "").strip()
-if not OPENAI_KEY:
-    raise ValueError("OPENAI_API_KEY not set in environment.")
-
 CHROMA_DB_PATH = os.getenv("CHROMA_DB_PATH", "./data/chroma_db")
 
 # -------------------------------
-# Initialize OpenAI client
+# Initialize OpenAI client if key exists
 # -------------------------------
-client_openai = OpenAI(api_key=OPENAI_KEY)
+client_openai = None
+if OPENAI_KEY:
+    try:
+        from openai import OpenAI
+        client_openai = OpenAI(api_key=OPENAI_KEY)
+    except Exception:
+        client_openai = None
 
 # -------------------------------
 # Initialize ChromaDB
@@ -64,15 +66,19 @@ def answer_query(query: str, n_results: int = 3) -> Dict[str, any]:
             f"Source: {m.get('url', 'N/A')}\n{d}" for d, m in zip(docs, metadatas)
         )
 
-        completion = client_openai.chat.completions.create(
-            model=os.getenv("OPENAI_CHAT_MODEL", "gpt-4o-mini"),
-            messages=[
-                {"role": "system", "content": "You are a helpful support assistant. Use the context to answer."},
-                {"role": "user", "content": f"Answer the question using the following context:\n\n{context}\n\nQuestion: {query}"}
-            ]
-        )
+        if client_openai:
+            completion = client_openai.chat.completions.create(
+                model=os.getenv("OPENAI_CHAT_MODEL", "gpt-4o-mini"),
+                messages=[
+                    {"role": "system", "content": "You are a helpful support assistant. Use the context to answer."},
+                    {"role": "user", "content": f"Answer the question using the following context:\n\n{context}\n\nQuestion: {query}"}
+                ]
+            )
+            answer = completion.choices[0].message.content
+        else:
+            # fallback if no API key → return context directly
+            answer = f"(No API key detected, showing context only)\n\n{context}"
 
-        answer = completion.choices[0].message.content
         sources = [m.get("url", "N/A") for m in metadatas]
 
         return {"answer": answer, "sources": sources}
