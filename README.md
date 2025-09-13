@@ -1,14 +1,21 @@
 # Customer Support Copilot (Atlan AI Engineer Internship Task)
 
 ## 📌 Overview
-This repository contains my submission for the **Atlan AI Engineering Internship Challenge**.  
-The goal of this task was to build a **Customer Support Copilot** system that can handle ticket classification, knowledge retrieval, and provide a small assistant view for resolving queries.
 
-The implementation demonstrates:  
-- Bulk ticket classification with fallback heuristics.  
-- A RAG-backed assistant that retrieves answers from ingested documentation.  
-- Local persistence using Chroma DB.  
-- A simple Streamlit UI for interaction.
+This repository contains my submission for the **Atlan AI Engineering Internship Challenge**.  
+The project implements a **Customer Support Copilot** system that can classify tickets, retrieve relevant documentation, and provide an assistant view for resolving queries.
+
+### Key Highlights
+
+- **Bulk Ticket Classification** – Supports multiple tickets at once, with rule-based heuristics as a fallback.  
+- **RAG-backed Assistant** – Retrieves answers from ingested documentation; uses LLM generation if an OpenAI API key is available.  
+- **Local Persistence** – Chroma DB stores embeddings for efficient retrieval.  
+- **Streamlit UI** – Simple interface for interactive exploration.  
+
+### Dual Modes
+
+- **With OpenAI API key** → LLM-powered classification and answer generation.  
+- **Without API key** → Rule-based classification and local retrieval with Chroma DB.  
 
 ---
 
@@ -24,7 +31,7 @@ The implementation demonstrates:
 
 ## ⚙️ Features
 - **Bulk Ticket Classification**: Classifies multiple tickets at once, with fallback heuristics if no OpenAI key is provided.  
-- **RAG-backed Assistant**: Uses a retrieval-augmented generation flow to answer queries from ingested docs.  
+- **RAG-backed Assistant**: Uses a retrieval-augmented generation flow to answer queries from ingested docs. If no OpenAI key is set, the assistant still retrieves relevant context locally, but LLM-based answer generation is skipped.  
 - **Chroma DB Support**: Stores embeddings locally for efficient retrieval.  
 - **Flexible Setup**: Works even without an OpenAI API key (heuristics only).  
 - **Streamlit UI**: Simple web app interface for exploration.
@@ -49,7 +56,7 @@ pip install -r requirements.txt
 python ingest.py --list
 ```
 
-4. *(Optional)* Fetch documentation to `data/docs`:
+4. Fetch documentation to `data/docs`:
 
 ```powershell
 python ingest.py --fetch <urls>
@@ -106,6 +113,10 @@ The following diagram illustrates the complete architecture of the **Customer Su
 
 3. **Lightweight & Minimal:**
    No heavy dependencies are used outside of `requirements.txt`, making the app easy to run locally.
+4. **Dual Mode (API / No API):**
+   Designed to run in constrained environments (no external API calls). If an OpenAI key is present, GPT models are used; otherwise, heuristics + local retrieval     ensure continuity.  
+
+
 
 ---
 
@@ -131,6 +142,7 @@ The following diagram illustrates the complete architecture of the **Customer Su
 
 This project is for **internship evaluation purposes only** under Atlan’s AI Engineer program.
 If reusing this work, please ensure proper attribution and follow open-source license guidelines.
+
 
 
 
