@@ -4,17 +4,17 @@
 ---
 
 ## ✅ What I submitted
-- **Streamlit app:** `app.py` (bulk dashboard + interactive assistant)  
-- **Ingest helper:** `ingest.py` (loads tickets + fetches docs from curated URLs)  
-- **Classification helper:** `classify.py` (topic, sentiment, priority, confidence)  
-- **RAG helper:** `rag.py` (retrieves answers using Chroma + GPT)  
-- **Local DB:** `data/chroma_db/` (Chroma persistent storage)  
-- **Sample tickets/docs:** `data/`  
-- **Tests:** `tests/` (unit tests for ingestion and classification)  
-- **Requirements:** `requirements.txt`  
+- **Streamlit app:** `app.py`- bulk dashboard + interactive assistant  
+- **Ingest helper:** `ingest.py` - loads tickets + fetches docs from curated URLs  
+- **Classification helper:** `classify.py` - topic, sentiment, priority, confidence; GPT-based if API key available, fallback to heuristics otherwise
+- **RAG helper:** `rag.py` - retrieves answers using Chroma; GPT-based answer generation only if API key is provided 
+- **Local DB:** `data/chroma_db/` - Chroma persistent storage
+- **Sample tickets:** `data/sample_tickets.jsonl` - contains example support tickets
+- **Tests:** `tests/` - unit tests for ingestion and classification
+- **Requirements:** `requirements.txt` - lists all Python dependencies for the project 
 - **Documentation:** [README.md](https://github.com/Gupta-4388/atlan-customer-support-copilot/blob/main/README.md), `submission.md`  
-- **Deployment config:** `render.yaml`  
-- **Git ignore / env example:** `.gitignore`, `.env.example`
+- **Deployment config:** `render.yaml` - configuration for Render deployment
+- **Git ignore / env example:** `.gitignore`, `.env.example` - ignores sensitive files and provides a template for environment variables
 
 ---
 
@@ -70,6 +70,7 @@ streamlit run app.py
 
 ## Notes / Next Steps
 
+* **API Flexibility:** The project works fully without an OpenAI API key (heuristics + retrieval only). With a key, GPT-based classification and answer generation are enabled for more accurate responses.  
 * **Future improvements:** Refine UI/UX, integrate advanced classification models, expand SDK documentation for precise RAG responses.  
 * **RAG answer note:** Answers are illustrative if relevant SDK docs are not present in `data/docs/`.  
 * **Chroma DB path:** Ensure `./data/chroma_db/` exists and is writable for local persistence.  
@@ -99,6 +100,7 @@ atlan-customer-support-copilot/
 ├── README.md                # Project documentation
 └── submission.md            # Submission summary
 ```
+
 
 
 
