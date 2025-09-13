@@ -19,7 +19,7 @@ import random
 from dotenv import load_dotenv
 
 load_dotenv()
-OPENAI_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_KEY = os.getenv("OPENAI_API_KEY", "").strip()
 
 TOPICS = ["How-to", "Product", "Connector", "Lineage", "API/SDK", "SSO", "Glossary", "Best practices", "Sensitive data"]
 SENTIMENTS = ["Frustrated", "Curious", "Angry", "Neutral"]
@@ -85,7 +85,7 @@ Text: '''{text}'''
 """
             resp = openai.ChatCompletion.create(
                 model="gpt-4o-mini",
-                messages=[{"role":"user","content":prompt}],
+                messages=[{"role": "user", "content": prompt}],
                 temperature=0.0,
                 max_tokens=200,
             )
@@ -98,9 +98,12 @@ Text: '''{text}'''
                 m = re.search(r"\{.*\}", raw, re.S)
                 if m:
                     return json.loads(m.group(0))
+                # fallback if parsing fails
+                return _heuristic_classify(text)
         except Exception:
-            # fallback to heuristic if OpenAI fails
+            # fallback if OpenAI call fails
             return _heuristic_classify(text)
     else:
         # no API key → use heuristic
         return _heuristic_classify(text)
+
