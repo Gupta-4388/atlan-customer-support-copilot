@@ -75,7 +75,7 @@ streamlit run app.py
 ```
 atlan-customer-support-copilot/
 
-├── app.py                    # Streamlit app (UI)
+├── app.py                    # Streamlit app (UI) & Dashboard
 ├── ingest.py                 # Handles ticket/doc ingestion
 ├── classify.py               # Ticket classification logic (topic, sentiment, priority)
 ├── rag.py                    # RAG helper: answer_query using Chroma + GPT
@@ -84,9 +84,9 @@ atlan-customer-support-copilot/
 │   ├── sample_tickets.jsonl  # Example support tickets
 │   ├── docs/                 # Optional SDK/docs files for RAG
 ├── tests/
-│   ├── test_ingest.py        # Test ingestion works (mock URLs)
+│   ├── test_ingest.py        # Test ingestion works 
 │   ├── test_classify.py      # Test classification logic
-├── .gitignore                # Ignore sensitive/auto-generated files
+├── .gitignore                # Ignore sensitive files
 ├── render.yaml               # Render deployment config
 ├── requirements.txt          # Dependencies
 ├── README.md                 # Project documentation
@@ -142,6 +142,7 @@ The following diagram illustrates the complete architecture of the **Customer Su
 
 This project is for **internship evaluation purposes only** under Atlan’s AI Engineer program.
 If reusing this work, please ensure proper attribution and follow open-source license guidelines.
+
 
 
 
